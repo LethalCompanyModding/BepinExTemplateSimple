@@ -24,7 +24,7 @@
     <PackageLicenseExpression></PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageTags>_GameName_;$(PackageTags)</PackageTags>
+    <PackageTags>Lethal Company;$(PackageTags)</PackageTags>
   </PropertyGroup>
 
 <!--#endif -->
@@ -66,9 +66,9 @@
 <!--#endif -->
     <PathBeforeSteam Condition="'$([MSBuild]::IsOSUnixLike())' == 'true'">$(HOME)/.local/share/</PathBeforeSteam>
     <PathBeforeSteam Condition="'$([MSBuild]::IsOSUnixLike())' != 'true'">$(MSBuildProgramFiles32)/</PathBeforeSteam>
-    <_GameNameNoSpaces_GameRootDir Condition="$(_GameNameNoSpaces_GameRootDir) == ''">$(PathBeforeSteam)Steam/steamapps/common/_GameName_/</_GameNameNoSpaces_GameRootDir>
-    <_GameNameNoSpaces_PluginsDir Condition="$(_GameNameNoSpaces_PluginsDir) == ''">$(_GameNameNoSpaces_GameRootDir)/BepInEx/plugins/</_GameNameNoSpaces_PluginsDir>
-    <ManagedDir>$(_GameNameNoSpaces_GameRootDir)/_GameName__Data/Managed/</ManagedDir>
+    <LethalCompanyGameRootDir Condition="$(LethalCompanyGameRootDir) == ''">$(PathBeforeSteam)Steam/steamapps/common/Lethal Company/</LethalCompanyGameRootDir>
+    <LethalCompanyPluginsDir Condition="$(LethalCompanyPluginsDir) == ''">$(LethalCompanyGameRootDir)/BepInEx/plugins/</LethalCompanyPluginsDir>
+    <ManagedDir>$(LethalCompanyGameRootDir)/Lethal Company_Data/Managed/</ManagedDir>
   </PropertyGroup>
 
 </Project>

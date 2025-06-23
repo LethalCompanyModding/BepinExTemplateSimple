@@ -1,6 +1,6 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "author": "_TemplateAuthorNoSpaces_",
+    "author": "dev.mamallama.lethal",
     "classifications": [
         "Console"
     ],
@@ -8,9 +8,9 @@
         "725F983D-24CD-4EC1-A08A-FEF64D1A04D0",
         "B0F2818C-F976-4923-B01A-D9A7319E0E8A"
     ],
-    "identity": "com.github._TemplateAuthorNoSpaces_.BepInExTemplate",
-    "name": "_GameName_ BepInEx Plugin",
-    "shortName": "_GameNameShortNoSpacesLowercase_mod",
+    "identity": "com.github.dev.mamallama.lethal.bepinsimple",
+    "name": "Lethal Company BepInEx Plugin",
+    "shortName": "LethalBepinSimplePlugin",
     "tags": {
         "language": "C#",
         "type": "project"

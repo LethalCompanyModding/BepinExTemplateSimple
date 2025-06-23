@@ -1,6 +1,6 @@
-# BepInEx Template for _GameName_
+# BepInEx Template for Lethal Company
 
-- [BepInEx Template for _GameName_](#bepinex-template-for-gamename)
+- [BepInEx Template for Lethal Company](#bepinex-template-for-lethal-company)
   - [Installing](#installing)
     - [From Nuget](#from-nuget)
     - [Manually](#manually)
@@ -9,16 +9,6 @@
     - [Setting Up The Config File](#setting-up-the-config-file)
     - [Thunderstore Packaging](#thunderstore-packaging)
     - [GitHub Actions Publishing](#github-actions-publishing)
-
-Template creator: After forking, replace the following, e.g.:
-
-- `_GameName_` → `Lethal Company` (name from Steam directory)
-- `_GameNameNoSpaces_` → `LethalCompany` (name with spaces removed)
-- `_GameNameShortNoSpacesLowercase_` → `lc` (used for template `shortName`)
-- `_TemplateAuthorNoSpaces_` → `LethalCompanyModding` (GitHub repo & NuGet package prefix)
-- `_ThunderstoreGameIdentifier_` → `lethal-company` (see: <https://thunderstore.io/api/experimental/community/>)
-
-You can then remove this section from the README.
 
 ## Installing
 
@@ -32,7 +22,7 @@ You can then remove this section from the README.
 Run the following command:
 
 ```bash
-dotnet new install _TemplateAuthorNoSpaces_.BepInExTemplate
+dotnet new install dev.mamallama.lethal.bepinsimple
 ```
 
 ### Manually
@@ -45,17 +35,17 @@ If you don't want to install via NuGet or are contributing to this template, you
   - Note: If you are updating the template from an older version use `dotnet new install . --force` instead
   - Note: To uninstall it, run `dotnet new uninstall .`
 
-Great! The template is now installed locally as _GameName_ BepInEx Plugin.
+Great! The template is now installed locally as Lethal Company BepInEx Plugin.
 
 ## Creating a Project
 
 > [!TIP]  
 > If you've done this before, you can use the `--no-tutorial` option to get rid of tutorial comments. Note that this doesn't get rid of *all* comments.
 
-Open a terminal in your _GameName_ modding directory, and run:
+Open a terminal in your Lethal Company modding directory, and run:
 
 ```sh
- dotnet new _GameNameShortNoSpacesLowercase_mod --name ModName --guid com.github.YourAccount.ModName --ts-team YourThunderstoreTeam
+ dotnet new LethalBepinSimplePlugin --name ModName --guid com.github.YourAccount.ModName --ts-team YourThunderstoreTeam
 ```
 
 This will create a new directory with the mod name which contains the project.
@@ -67,11 +57,11 @@ You now have a (mostly) working setup. See [Setting Up The Config File](#setting
 This example demonstrates what files should appear and where:
 
 ```sh
-~/Workspace/_GameNameNoSpaces_$ dotnet new _GameNameShortNoSpacesLowercase_mod --name MyCoolMod --guid com.github._TemplateAuthorNoSpaces_.MyCoolMod --ts-team _TemplateAuthorNoSpaces_
-The template "_GameNameNoSpaces_ BepInEx Plugin" was created successfully.
+~/Workspace/LethalCompany$ dotnet new LethalBepinSimplePlugin --name MyCoolMod --guid com.github.LethalCompanyModding.MyCoolMod --ts-team LethalCompanyModding
+The template "LethalCompany BepInEx Plugin" was created successfully.
 
-~/Workspace/_GameNameNoSpaces_$ cd MyCoolMod/
-~/Workspace/_GameNameNoSpaces_/MyCoolMod$ tree
+~/Workspace/LethalCompany$ cd MyCoolMod/
+~/Workspace/LethalCompany/MyCoolMod$ tree
 .
 ├── CHANGELOG.md
 ├── Config.Build.user.props.template
