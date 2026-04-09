@@ -74,12 +74,6 @@
     <Reference Include="@(LocalReferences)" Private="false" />
 <!--#if (!no-tutorial) -->
     <!--
-      Publicize these assemblies so we can access their internal members.
-      Learn more at: https://github.com/BepInEx/BepInEx.AssemblyPublicizer
-    -->
-<!--#endif -->
-<!--#if (!no-tutorial) -->
-    <!--
       Publicizing allows us access to private/protected/internal members
       but can break inheritance from game objects. This default setup
       will work for nearly all cases
@@ -90,8 +84,10 @@
       It is also possible to continue publicizing all virtual members and
       exclude the specific ones you need for inheritance
       <DoNotPublicize Include="Assembly-CSharp:NAMESPACE.CLASS" />
+
+      See more: https://github.com/krafs/Publicizer?tab=readme-ov-file#usage
     -->
-<!--#endif -->
+    <!--#endif -->
     <Publicize Include="Assembly-CSharp" IncludeCompilerGeneratedMembers="false" />
   </ItemGroup>
 
