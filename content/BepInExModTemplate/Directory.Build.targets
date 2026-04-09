@@ -49,7 +49,7 @@
 
   <!-- NuGet fallback stripped game references -->
   <ItemGroup Condition="!Exists('$(ManagedDir)')">
-    <PackageReference Include="LethalCompany.GameLibs.Steam" Version="81.0.0-ngd.0"
+    <PackageReference Include="LethalCompany.GameLibs.Steam" Version="*-*"
       PrivateAssets="all" />
   </ItemGroup>
 
