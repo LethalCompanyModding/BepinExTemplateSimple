@@ -61,6 +61,8 @@
     <!-- Build, and other generated files go nicely into artifacts/ directory. -->
 <!--#endif -->
     <UseArtifactsOutput>true</UseArtifactsOutput>
+    <!-- Krafs publicizer configuration. See: https://github.com/krafs/Publicizer -->
+    <PublicizerRuntimeStrategies>unsafe</PublicizerRuntimeStrategies>
 <!--#if (!no-tutorial) -->
     <!-- Enable debug symbols. This will show source code line numbers in stack traces. -->
 <!--#endif -->

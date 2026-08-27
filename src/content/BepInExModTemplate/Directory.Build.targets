@@ -42,7 +42,10 @@
     -->
 <!--#endif -->
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3" PrivateAssets="all" />
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Unity.Analyzers" Version="1.27.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -87,8 +90,18 @@
     <Reference Include="@(LocalReferences)" Private="false" />
 <!--#if (!no-tutorial) -->
     <!--
-      Publicize these assemblies so we can access their internal members.
-      Learn more at: https://github.com/BepInEx/BepInEx.AssemblyPublicizer
+      Publicizing allows us access to private/protected/internal members
+      but can break inheritance from game objects. This default setup
+      will work for nearly all cases
+
+      You can fully disable virtual member publicizing by including
+      `IncludeVirtualMembers="false"` below.
+
+      It is also possible to continue publicizing all virtual members and
+      exclude the specific ones you need for inheritance
+      <DoNotPublicize Include="Assembly-CSharp:NAMESPACE.CLASS" />
+
+      See more: https://github.com/krafs/Publicizer?tab=readme-ov-file#usage
     -->
 <!--#endif -->
     <Reference Include="$(ManagedDir)Assembly-CSharp.dll" Private="false" Publicize="true" />
