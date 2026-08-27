@@ -34,7 +34,6 @@ You can directly publish to Thunderstore by including `-p:PublishTS=true` in the
 
 > [!TIP]  
 > Make sure the local package looks fine in `./artifacts/thunderstore/` first, then publish with `dotnet build -c Release -p:PublishTS=true -v d` to avoid potential mistakes.
-__TEMPLATE_CONFIG_IF(GameLibsAvailable)__
 <!--#if (github-workflow) -->
 
 ### Publishing via GitHub Actions
@@ -54,4 +53,3 @@ The wildcard at the beginning of the glob `*[0-9]+.[0-9]+.[0-9]+` is for if you 
    - Getting NuGet API key: <https://learn.microsoft.com/en-us/nuget/nuget-org/publish-a-package#create-an-api-key>
 <!--#endif -->
 <!--#endif -->
-__TEMPLATE_CONFIG_ENDIF__

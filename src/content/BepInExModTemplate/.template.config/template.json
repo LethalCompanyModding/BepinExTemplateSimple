@@ -1,12 +1,12 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "author": "_TemplateRepoAuthorNoSpaces_",
+    "author": "LethalCompanyModding",
     "classifications": [
         "BepInEx", "Plugin", "Mod"
     ],
-    "identity": "_TemplateRepoAuthorNoSpaces_._TemplatePackageNameNoSpaces_",
-    "name": "_GameName_ BepInEx Plugin",
-    "shortName": "_GameNameShortNoSpacesLowercase_mod",
+    "identity": "LethalCompanyModding.BepInExTemplate",
+    "name": "Lethal Company BepInEx Plugin",
+    "shortName": "lcmod",
     "tags": {
         "language": "C#",
         "type": "project"
@@ -51,7 +51,6 @@
             "datatype": "bool",
             "defaultValue": "false"
         },
-        // __TEMPLATE_CONFIG_IF(GameLibsAvailable)__
         "github-workflow": {
             "type": "parameter",
             "displayName": "GitHub Workflow",
@@ -59,15 +58,12 @@
             "datatype": "bool",
             "defaultValue": "false"
         }
-        // __TEMPLATE_CONFIG_ENDIF__
     },
     "sources": [
         {
             "modifiers": [
                 {
-                    // __TEMPLATE_CONFIG_IF(GameLibsAvailable)__
                     "condition": "!(github-workflow)",
-                    // __TEMPLATE_CONFIG_ENDIF__
                     "exclude": [
                         ".github/**"
                     ]
