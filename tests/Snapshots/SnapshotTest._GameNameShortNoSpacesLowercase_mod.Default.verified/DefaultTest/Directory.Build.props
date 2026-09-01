@@ -33,6 +33,8 @@
     <AnalysisMode>recommended</AnalysisMode>
     <!-- Build, and other generated files go nicely into artifacts/ directory. -->
     <UseArtifactsOutput>true</UseArtifactsOutput>
+    <!-- Krafs publicizer configuration. See: https://github.com/krafs/Publicizer -->
+    <PublicizerRuntimeStrategies>unsafe</PublicizerRuntimeStrategies>
     <!-- Enable debug symbols. This will show source code line numbers in stack traces. -->
     <DebugSymbols>true</DebugSymbols>
     <DebugType>embedded</DebugType>

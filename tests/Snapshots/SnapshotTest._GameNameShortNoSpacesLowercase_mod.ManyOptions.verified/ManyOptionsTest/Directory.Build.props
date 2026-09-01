@@ -37,6 +37,8 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>recommended</AnalysisMode>
     <UseArtifactsOutput>true</UseArtifactsOutput>
+    <!-- Krafs publicizer configuration. See: https://github.com/krafs/Publicizer -->
+    <PublicizerRuntimeStrategies>unsafe</PublicizerRuntimeStrategies>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>embedded</DebugType>
   </PropertyGroup>

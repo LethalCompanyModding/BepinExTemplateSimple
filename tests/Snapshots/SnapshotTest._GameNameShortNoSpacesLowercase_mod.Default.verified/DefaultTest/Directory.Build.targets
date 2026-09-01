@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
   <!--
     This is a special file that contains shared configuration
     for all project files in subdirectories.
@@ -36,7 +36,14 @@
       code analyzers, source generators, or other build-only packages.
     -->
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3" PrivateAssets="all" />
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Unity.Analyzers" Version="1.27.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Hamunii.BepInEx.AutoPlugin" Version="2.1.*" PrivateAssets="all" />
     <!-- Source-only polyfills for C# language features https://github.com/Sergio0694/PolySharp -->
     <PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all" />
@@ -69,8 +76,18 @@
     />
     <Reference Include="@(LocalReferences)" Private="false" />
     <!--
-      Publicize these assemblies so we can access their internal members.
-      Learn more at: https://github.com/BepInEx/BepInEx.AssemblyPublicizer
+      Publicizing allows us access to private/protected/internal members
+      but can break inheritance from game objects. This default setup
+      will work for nearly all cases
+
+      You can fully disable virtual member publicizing by including
+      `IncludeVirtualMembers="false"` below.
+
+      It is also possible to continue publicizing all virtual members and
+      exclude the specific ones you need for inheritance
+      <DoNotPublicize Include="Assembly-CSharp:NAMESPACE.CLASS" />
+
+      See more: https://github.com/krafs/Publicizer?tab=readme-ov-file#usage
     -->
     <Reference Include="$(ManagedDir)Assembly-CSharp.dll" Private="false" Publicize="true" />
   </ItemGroup>
