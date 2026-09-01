@@ -1,4 +1,4 @@
-﻿# ManyOptionsTest
+# ManyOptionsTest
 
 Describe your project here!
 
@@ -34,7 +34,6 @@ You can directly publish to Thunderstore by including `-p:PublishTS=true` in the
 
 > [!TIP]  
 > Make sure the local package looks fine in `./artifacts/thunderstore/` first, then publish with `dotnet build -c Release -p:PublishTS=true -v d` to avoid potential mistakes.
-__TEMPLATE_CONFIG_IF(GameLibsAvailable)__
 
 ### Publishing via GitHub Actions
 
@@ -50,4 +49,3 @@ The wildcard at the beginning of the glob `*[0-9]+.[0-9]+.[0-9]+` is for if you 
    - Setting a GitHub secret: <https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets>
 3. Since the `--library` option was used, get your NuGet API key and create a new secret named `NUGET_API_KEY` on GitHub with the API key as its contents
    - Getting NuGet API key: <https://learn.microsoft.com/en-us/nuget/nuget-org/publish-a-package#create-an-api-key>
-__TEMPLATE_CONFIG_ENDIF__

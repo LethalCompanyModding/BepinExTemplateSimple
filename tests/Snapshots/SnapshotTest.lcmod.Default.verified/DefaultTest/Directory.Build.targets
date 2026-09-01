@@ -1,4 +1,4 @@
-﻿<Project>
+<Project>
   <!--
     This is a special file that contains shared configuration
     for all project files in subdirectories.
@@ -47,8 +47,6 @@
     <PackageReference Include="Hamunii.BepInEx.AutoPlugin" Version="2.1.*" PrivateAssets="all" />
     <!-- Source-only polyfills for C# language features https://github.com/Sergio0694/PolySharp -->
     <PackageReference Include="PolySharp" Version="1.16.0" PrivateAssets="all" />
-<!-- __TEMPLATE_CONFIG_IF(GameLibsAvailable)__ -->
-<!-- __TEMPLATE_CONFIG_ENDIF__ -->
   </ItemGroup>
 
   <!-- Modding dependencies -->
@@ -60,7 +58,7 @@
 
   <!-- NuGet fallback stripped game references -->
   <ItemGroup Condition="!Exists('$(ManagedDir)')">
-    <PackageReference Include="UnityEngine.Modules" Version="6000.0.36" PrivateAssets="all" />
+    <PackageReference Include="LethalCompany.GameLibs.Steam" Version="*-*" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Local game references -->
@@ -95,14 +93,14 @@
   <!-- Copy mod files defined in projects to the target BepInEx directory -->
   <Target Name="DeployFiles" AfterTargets="Build" Condition="'$(DeployModFiles)' == 'true'">
     <PropertyGroup>
-      <_TargetDir>$([MSBuild]::NormalizeDirectory($(_GameNameNoSpaces_BepInExDir)))</_TargetDir>
+      <_TargetDir>$([MSBuild]::NormalizeDirectory($(LethalCompanyBepInExDir)))</_TargetDir>
     </PropertyGroup>
     <Message
       Text="Deploy → @(ModFile -> '%(Destination)%(FileName)%(Extension)')"
       Importance="High"
     />
     <Error
-      Text="BepInEx directory '$(_TargetDir)' doesn't exist! Configure _GameNameNoSpaces_BepInExDir to point to a valid path in the Config.Build.user.props file."
+      Text="BepInEx directory '$(_TargetDir)' doesn't exist! Configure LethalCompanyBepInExDir to point to a valid path in the Config.Build.user.props file."
       Condition="!Exists('$(_TargetDir)')"
     />
     <Copy SourceFiles="@(ModFile)" DestinationFolder="$(_TargetDir)%(Destination)" />
@@ -121,6 +119,4 @@
   >
     <Error Text="Release configuration must be used when publishing Thunderstore package." />
   </Target>
-<!-- __TEMPLATE_CONFIG_IF(GameLibsAvailable)__ -->
-<!-- __TEMPLATE_CONFIG_ENDIF__ -->
 </Project>
