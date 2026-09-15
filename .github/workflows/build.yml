@@ -2,7 +2,7 @@ name: Build and Test Template
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   # Trigger the workflow on any pull request
   pull_request:
 
@@ -17,9 +17,11 @@ jobs:
           filter: tree:0
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: "10.x"
+          cache: true
+          cache-dependency-path: "**/packages.lock.json"
 
       - name: Restore and Pack
         run: |

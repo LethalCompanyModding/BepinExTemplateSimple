@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETStandard,Version=v2.1": {
+      "Microsoft.TemplateEngine.Tasks": {
+        "type": "Direct",
+        "requested": "[*, )",
+        "resolved": "7.0.120",
+        "contentHash": "nwDa8oHQ902bHgHrBzrcHHOhC1U7mLlOhPMsLJOYes3hSzDdkc0cmjxq/GrF+zcJPCbDP0fyC352BSf2Uke8qg=="
+      },
+      "MinVer": {
+        "type": "Direct",
+        "requested": "[7.0.0, )",
+        "resolved": "7.0.0",
+        "contentHash": "2lMTCQl5bGP4iv0JNkockPnyllC6eHLz+CoK2ICvalvHod+exXSxueu9hq+zNkU7bZBJf8wMfeRC/Edn8AGmEg=="
+      }
+    }
+  }
+}

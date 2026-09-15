@@ -2,5 +2,6 @@
   <PropertyGroup>
     <UseArtifactsOutput>true</UseArtifactsOutput>
     <SolutionRoot>$(MSBuildThisFileDirectory)</SolutionRoot>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
 </Project>
